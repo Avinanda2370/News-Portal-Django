@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+        <title>My home page</title>
+    
+{% endblock title %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    
+     <li class="nav-item active">
+        <a class="nav-link" href="{{navelement.link}}">Home</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="{{navelement.link}}">News</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="{{navelement.link}}">Category</a>
+      </li>
+      
+    
+      
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    {% for news in mynews  %}
+    <div class="card mr-4 mb-4"  style="width: 18rem; ">
+      <img src="{{news.image.url}}" class="card-img-top" alt="..." style="width:100%;height:200px;">
+      <div class="card-body">
+        <h5 class="card-title">{{news.title|slice:":40"}}</h5>
+        <p class="card-text">{{ news.description|slice:":20" }}</p>
+        <a href="{% url 'singleview' news.id %}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+   {% endfor %}
+  </div>
+</div>
+{% endblock content %}
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>Singleview</title>
+{% endblock title %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'first' %}">Home</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{navelement.link}}">News</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{navelement.link}}">Category</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+     <img src="{{ news.image.url }}" alt="" style="width:500px;height:600px;">
+        <h1>{{news.title}}</h1>
+        <p>{{news.description}}</p>
+        {% for comment in news.comment.all  %}
+        <div>
+          <p>{{ comment.user_name }}</p>
+          <p>{{ comment.comment }}</p>
+        </div>
+        {% endfor %}
+</div>
+
+{% endblock content %}
