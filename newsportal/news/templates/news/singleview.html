@@ -29,12 +29,12 @@
      <img src="{{ news.image.url }}" alt="" style="width:500px;height:600px;">
         <h1>{{news.title}}</h1>
         <p>{{news.description}}</p>
-        {% for comment in news.comment.all  %}
-        <div>
-          <p>{{ comment.user_name }}</p>
-          <p>{{ comment.comment }}</p>
-        </div>
-        {% endfor %}
+<!--        {% for comment in news.comment.all  %}-->
+<!--        <div>-->
+<!--          <p>{{ comment.user_name }}</p>-->
+<!--          <p>{{ comment.comment }}</p>-->
+<!--        </div>-->
+<!--        {% endfor %}-->
 </div>
 
 {% endblock content %}
