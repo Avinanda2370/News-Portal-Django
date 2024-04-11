@@ -65,3 +65,5 @@ Contributions to the project are welcome! If you find any bugs or have suggestio
 
 License
 The news website is open-source software released under the MIT License. Feel free to use, modify, and distribute the code as needed.
+![Screenshot (335)](https://github.com/Avinanda2370/News-Portal-Django/assets/102664151/c1b7b2e2-fabb-4f0d-bbc9-a364a9036002)
+
